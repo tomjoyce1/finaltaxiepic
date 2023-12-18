@@ -1,7 +1,69 @@
 package org.example;
 
+import java.util.*;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        VehicleApp vehicleApp = new VehicleApp();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input your x co-ordinates");
+        int xWhereCustomerIs = scanner.nextInt();
+        System.out.println("Input your y co-ordinates");
+        int yWhereCustomerIs = scanner.nextInt();
+        testVehicleAppMethods(vehicleApp, xWhereCustomerIs, yWhereCustomerIs);
+
+
+
+
+
+        vehicleApp.visualizeGrid(5);
+
+
+        System.out.println("Which taxi ID to move?");
+        String taxiToBeMoved = scanner.next();
+
+        System.out.println("Which x co-ordinate to go to?");
+        int xToGo = scanner.nextInt();
+
+        System.out.println("Which y co-ordinate to go to?");
+        int yToGo = scanner.nextInt();
+
+
+        // This is to move the taxi about
+        System.out.println(" ");
+        vehicleApp.testMoveVehicle(taxiToBeMoved, new Location(xToGo, yToGo));
+        vehicleApp.visualizeGrid(5);
+
+        System.out.println("Rate the taxi driver out of 5");
+        int userRatingofDriver = scanner.nextInt();
+        System.out.println("You rated the driver " + userRatingofDriver +" out of 5");
+
+
+    }
+
+    private static void testVehicleAppMethods(VehicleApp vehicleApp, int xWhereCustomerIs, int yWhereCustomerIs) {
+
+
+        vehicleApp.testAddToMap("AB12", new Location(1, 1));
+        vehicleApp.testAddToMap("Tony", new Location(3, 3));
+        vehicleApp.testAddToMap("Mark", new Location(3, 1));
+
+
+        //  vehicleApp.testMoveVehicle("ABC123", new Location(4, 4));
+
+
+        //   vehicleApp.testRemoveVehicle("test");
+
+
+        //  Location locationABC123 = vehicleApp.testGetVehicleLoc("AB12");
+        //   System.out.println("Location of ABC123: " + locationAB12);
+
+
+        Location testLocation = new Location(xWhereCustomerIs, yWhereCustomerIs);
+        int range = 1;
+
+        List<String> vehiclesInRange = vehicleApp.testGetVehiclesInRange(testLocation, range);
+        System.out.println("Vehicles in range of " + testLocation + " with range " + range + ": " + vehiclesInRange);
     }
 }

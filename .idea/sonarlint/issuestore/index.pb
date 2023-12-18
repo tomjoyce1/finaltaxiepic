@@ -52,3 +52,11 @@ Q.idea/sonarlint/securityhotspotstore/2/c/2cabb939da04d3de3a200bf2b575690e1a1631
 Q.idea/sonarlint/securityhotspotstore/2/5/2555de1b3493c5dd158807dc0c21215dcb908daf,e\4\e4aae8b93ec54e4d7caec370eca6d75d95d7eaf7
 K
 .github/workflows/maven.yml,c\7\c709f6995f23dae0da365bff70068f8288fa89e0
+Y
+)src/main/java/org/example/VehicleApp.java,d\3\d3593f7e811f16798b7a1df255469a0ea8bc2f59
+`
+0src/main/java/org/example/VehicleHiringTest.java,6\6\66b748002f1b4d011e99c7a2397e3ae75ced6c24
+V
+&src/main/java/org/example/Vehicle.java,e\3\e33d4fee6bac84eacf325992ccd718f041b88816
+W
+'src/main/java/org/example/Location.java,a\0\a057bfa3bd9a8b2da310d85a3015ce214961616a
