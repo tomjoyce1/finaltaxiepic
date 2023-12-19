@@ -29,6 +29,7 @@ public class Vehicle {
         this.registrationNumber = registrationNumber;
     }
 
+    //this is to return rating
     public int getRating() {
         return rating;
     }
