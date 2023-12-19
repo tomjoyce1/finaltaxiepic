@@ -4,30 +4,17 @@ import java.util.*;
 
 public interface VehicleHiringTest {
 
-    public static boolean testAddToMap(String reg, Location loc){return false;}
+
+    boolean testAddToMap(String registrationNumber, Location loc);
+
+    boolean testMoveVehicle(String reg, Location loc);
 
 
-    public static boolean testMoveVehicle(String reg, Location loc) {
-        return false;
-    }
+ boolean testRemoveVehicle(String registrationNumber);
 
-
-
-    public static boolean testRemoveVehicle(String reg) {
-        return false;
-    }
-
-
-
-    public static Location testGetVehicleLoc(String reg) {
-        return null;
-    }
+    Location testGetVehicleLoc(String registrationNumber);
 
     // Return a list of all vehicles registration numbers located within a square of side 2*r centered at location loc (inclusive
 //of the boundaries).
-    public static List<String> testGetVehiclesInRange(Location loc, int r) {
-        return null;
-    }
-
-
+    CustomArrayList<String> testGetVehiclesInRange(Location loc, int r);
 }

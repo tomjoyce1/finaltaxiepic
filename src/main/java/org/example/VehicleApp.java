@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class VehicleApp implements VehicleHiringTest {
@@ -14,6 +13,7 @@ public class VehicleApp implements VehicleHiringTest {
         vehicleMap = new HashMap<>();
     }
 
+    @Override
     public boolean testAddToMap(String registrationNumber, Location loc) {
         if (vehicles.containsKey(registrationNumber)) {
             return false;
@@ -26,7 +26,7 @@ public class VehicleApp implements VehicleHiringTest {
         return true;
     }
 
-
+    @Override
     public boolean testMoveVehicle(String reg, Location loc) {
         Vehicle vehicle = vehicles.get(reg);
 
@@ -58,6 +58,7 @@ public class VehicleApp implements VehicleHiringTest {
         return totalSum/count;
 
     }
+    @Override
     public boolean testRemoveVehicle(String registrationNumber) {
         Vehicle vehicle = vehicles.remove(registrationNumber);
 
@@ -70,11 +71,14 @@ public class VehicleApp implements VehicleHiringTest {
             return false;
         }
     }
+
+    @Override
     public Location testGetVehicleLoc(String registrationNumber) {
         Vehicle vehicle = vehicles.get(registrationNumber);
         return (vehicle != null) ? vehicle.getLocation() : null;
     }
 
+@Override
     public CustomArrayList<String> testGetVehiclesInRange(Location loc, int r) {
         CustomArrayList<String> vehiclesInRange = new CustomArrayList<>();
 
