@@ -1,39 +1,33 @@
 name: Continuous Deployment
 
 on:
-  create:
-    tags: '*'
+  release:
+    types:
+      - created
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: C:/Users/Thoma/IdeaProjects/finaltaxiepic
-
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          distribution: 'adopt'
+          java-version: '11'
 
-      - name: Set up Docker Buildx
-        id: buildx
-        uses: docker/setup-buildx-action@v1
+      - name: Build JAR
+        run: mvn clean install
 
-      - name: Build and push
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v2
         with:
-          context: ./
-          file: ./Dockerfile
+          context: .
+          file: Dockerfile
           push: true
           tags: |
             thomasjoyce1/tom-taxi-app:latest
             thomasjoyce1/tom-taxi-app:${{ github.sha }}
-            thomasjoyce1/tom-taxi-app:${{ github.event_name }}-${{ github.run_number }}
-          
