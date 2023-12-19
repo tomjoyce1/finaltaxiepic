@@ -36,3 +36,5 @@ jobs:
           tags: |
             thomasjoyce1/tom-taxi-app:latest
             thomasjoyce1/tom-taxi-app:${{ github.sha }}
+            thomasjoyce1/tom-taxi-app:${{ github.event_name }}-${{ github.run_number }}
+          
