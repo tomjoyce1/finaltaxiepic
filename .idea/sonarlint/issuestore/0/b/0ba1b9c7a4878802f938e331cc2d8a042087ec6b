@@ -1,25 +1,23 @@
 
-q
-java:S3008"ORename this field "Fare" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë×‘Ãûÿÿÿÿ8Ïöé™È1
-L	java:S106"+Replace this use of System.out by a logger.(íšååÿÿÿÿÿ8×÷é™È1
-G	java:S106"+Replace this use of System.out by a logger.(«Ëå8ä÷é™È1
-L	java:S106"+Replace this use of System.out by a logger.(áµÁ½şÿÿÿÿ8ş÷é™È1
-L	java:S106"+Replace this use of System.out by a logger.(¨­÷Áÿÿÿÿÿ8€øé™È1
-G	java:S106""+Replace this use of System.out by a logger.(¾‰º’8ƒøé™È1
-L	java:S106'"+Replace this use of System.out by a logger.(ŞÒ—üÿÿÿÿ8Œøé™È1
-L	java:S1062"+Replace this use of System.out by a logger.(ÿé½šüÿÿÿÿ8øé™È1
-G	java:S1065"+Replace this use of System.out by a logger.(†Ôø‚8™øé™È1
-F	java:S1067"+Replace this use of System.out by a logger.(Æ¼Ÿw8›øé™È1
-G	java:S106="+Replace this use of System.out by a logger.(èúš8øé™È1
-L	java:S106A"+Replace this use of System.out by a logger.(”‰‹œøÿÿÿÿ8Ÿøé™È1
-L	java:S106D"+Replace this use of System.out by a logger.(ñÄİµıÿÿÿÿ8¥øé™È1
-L	java:S106F"+Replace this use of System.out by a logger.(–ªÑ’ıÿÿÿÿ8¦øé™È1
-]	java:S125V"<This block of commented-out lines of code should be removed.(óâ…Ğşÿÿÿÿ8¬øé™È1
-W	java:S125Y"<This block of commented-out lines of code should be removed.(ä=8­øé™È1
-X	java:S125\"<This block of commented-out lines of code should be removed.(×±µ‰8¯øé™È1
-L	java:S106b"+Replace this use of System.out by a logger.(µœÒµÿÿÿÿÿ8²øé™È1
-G	java:S106c"+Replace this use of System.out by a logger.(ıÌ—8½øé™È1
-L	java:S106e"+Replace this use of System.out by a logger.(ğæãªşÿÿÿÿ8Çøé™È1
-F	java:S106n"+Replace this use of System.out by a logger.(§Ğº08Îøé™È1
+L	java:S106"+Replace this use of System.out by a logger.(íšååÿÿÿÿÿ8Å¢ø¡È1
+G	java:S106"+Replace this use of System.out by a logger.(«Ëå8É¢ø¡È1
+L	java:S106"+Replace this use of System.out by a logger.(áµÁ½şÿÿÿÿ8É¢ø¡È1
+L	java:S106"+Replace this use of System.out by a logger.(¨­÷Áÿÿÿÿÿ8Ê¢ø¡È1
+G	java:S106""+Replace this use of System.out by a logger.(¾‰º’8Ê¢ø¡È1
+L	java:S106'"+Replace this use of System.out by a logger.(ŞÒ—üÿÿÿÿ8Ê¢ø¡È1
+L	java:S1062"+Replace this use of System.out by a logger.(€¶œ øÿÿÿÿ8Ì¢ø¡È1
+G	java:S1065"+Replace this use of System.out by a logger.(†Ôø‚8Ì¢ø¡È1
+F	java:S1067"+Replace this use of System.out by a logger.(Æ¼Ÿw8Í¢ø¡È1
+G	java:S106="+Replace this use of System.out by a logger.(èúš8Í¢ø¡È1
+L	java:S106A"+Replace this use of System.out by a logger.(”‰‹œøÿÿÿÿ8Î¢ø¡È1
+L	java:S106D"+Replace this use of System.out by a logger.(ñÄİµıÿÿÿÿ8Ğ¢ø¡È1
+L	java:S106F"+Replace this use of System.out by a logger.(–ªÑ’ıÿÿÿÿ8Ğ¢ø¡È1
+]	java:S125V"<This block of commented-out lines of code should be removed.(óâ…Ğşÿÿÿÿ8Ó¢ø¡È1
+W	java:S125Y"<This block of commented-out lines of code should be removed.(ä=8Ó¢ø¡È1
+X	java:S125\"<This block of commented-out lines of code should be removed.(×±µ‰8Ó¢ø¡È1
+L	java:S106b"+Replace this use of System.out by a logger.(µœÒµÿÿÿÿÿ8Ô¢ø¡È1
+G	java:S106c"+Replace this use of System.out by a logger.(ıÌ—8Ô¢ø¡È1
+L	java:S106e"+Replace this use of System.out by a logger.(ğæãªşÿÿÿÿ8Õ¢ø¡È1
+F	java:S106n"+Replace this use of System.out by a logger.(§Ğº08Ö¢ø¡È1
 C
-java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ8Ğøé™È1
+java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ8Ö¢ø¡È1

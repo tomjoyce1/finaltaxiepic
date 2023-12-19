@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 public class Main {
-    static double Fare = 0;
+
     public static void main(String[] args) {
 
         VehicleApp vehicleApp = new VehicleApp();
@@ -42,12 +42,12 @@ public class Main {
 
 
                     vehicleApp.visualizeGrid(5, xToGo,yToGo);
-                    Fare = vehicleApp.calculateFare(xWhereCustomerIs, yWhereCustomerIs, xToGo, yToGo);
+                    String fare = vehicleApp.calculateFare(xWhereCustomerIs, yWhereCustomerIs, xToGo, yToGo);
 
 
 
 
-                    System.out.println("Your fare is € " + Fare);
+                    System.out.println("Your fare is €" + fare);
 
 
                     System.out.println("Rate the taxi driver out of 5");
@@ -93,7 +93,7 @@ public class Main {
         //   System.out.println("Location of ABC123: " + locationAB12);
 
 //if they are out of bounds
-              if(xWhereCustomerIs > 4 || yWhereCustomerIs > 4){
+              if(xWhereCustomerIs > 5 || yWhereCustomerIs > 5){
                   Scanner sc = new Scanner(System.in);
             System.out.println("Out of bounds, input coordinates within (4,4)");
                   System.out.println("Input your x co-ordinates (must be less than 5)");
