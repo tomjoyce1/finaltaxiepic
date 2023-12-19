@@ -31,5 +31,3 @@ jobs:
           tags: |
             thomasjoyce1/tom-taxi-app:latest
             thomasjoyce1/tom-taxi-app:${{ github.sha }}
-          build-args: --debug
-
