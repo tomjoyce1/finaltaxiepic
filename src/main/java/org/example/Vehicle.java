@@ -13,6 +13,7 @@ public class Vehicle {
         this.location = location;
     }
 
+
     public Location getLocation() {
         return location;
     }

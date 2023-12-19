@@ -62,8 +62,6 @@ W
 'src/main/java/org/example/Location.java,a\0\a057bfa3bd9a8b2da310d85a3015ce214961616a
 Q
 !.github/workflows/cd_workflow.yml,c\d\cdbcbc07f6935bc96dec33763295423a5db261da
-B
-.github/Dockerfile,2\6\2604a572ac0c5169dbd53fd5674be5209dd0a138
 :
 
 Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
