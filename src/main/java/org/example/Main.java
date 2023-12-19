@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 public class Main {
+    static double Fare = 0;
     public static void main(String[] args) {
 
         VehicleApp vehicleApp = new VehicleApp();
@@ -41,11 +42,18 @@ public class Main {
 
 
                     vehicleApp.visualizeGrid(5, xToGo,yToGo);
+                    Fare = vehicleApp.calculateFare(xWhereCustomerIs, yWhereCustomerIs, xToGo, yToGo);
+
+
+
+
+                    System.out.println("Your fare is € " + Fare);
+
 
                     System.out.println("Rate the taxi driver out of 5");
                     int userRatingofDriver = scanner.nextInt();
                     System.out.println("You rated the driver " + userRatingofDriver + " out of 5");
-                    System.out.println("Your average rating is now " + vehicleApp.getAverageRating(userRatingofDriver));
+
 
 
                     break;

@@ -99,6 +99,19 @@ public class VehicleApp implements VehicleHiringTest {
         return vehiclesInRange;
     }
 
+    public double calculateFare(int x1, int y1, int x2, int y2) {
+        // Calculate Euclidean distance
+        double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+        // Your fare calculation logic here
+        // For example, a simple flat rate of €1 per unit distance
+        double fare = distance * 1.0;
+
+               return fare;
+
+    }
+
+
     private void printCellWithVehicle(Vehicle vehicle) {
         System.out.print("[" + vehicle.getRegistrationNumber() + "]");
     }
