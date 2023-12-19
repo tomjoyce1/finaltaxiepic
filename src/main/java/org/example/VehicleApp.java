@@ -41,6 +41,7 @@ public class VehicleApp implements VehicleHiringTest{
             return false;
         }
 
+        List<Vehicle> vehiclesAtDestination = vehicleMap.computeIfAbsent(loc, k -> new ArrayList<>());
 
         List<Vehicle> currentLocationVehicles = vehicleMap.get(vehicle.getLocation());
         if (currentLocationVehicles != null) {
@@ -121,8 +122,10 @@ public class VehicleApp implements VehicleHiringTest{
 
 
                 if (!vehiclesAtLoc.isEmpty()) {
+                    for(Vehicle vehicle : vehiclesAtLoc){
+                        printCellWithVehicle(vehicle);
+                    }
 
-                    printCellWithVehicle(vehiclesAtLoc.get(0));
                 } else {
                     printEmptyCell();
                 }

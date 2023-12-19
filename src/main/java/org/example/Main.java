@@ -7,45 +7,58 @@ public class Main {
     public static void main(String[] args) {
 
         VehicleApp vehicleApp = new VehicleApp();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Input your x co-ordinates");
-
-
 
         while(true) {
-            try {
-                int xWhereCustomerIs = scanner.nextInt();
-                System.out.println("Input your y co-ordinates");
-                int yWhereCustomerIs = scanner.nextInt();
-                testVehicleAppMethods(vehicleApp, xWhereCustomerIs, yWhereCustomerIs);
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Input your x co-ordinates");
 
 
-                vehicleApp.visualizeGrid(5);
+            while (true) {
+                try {
+                    int xWhereCustomerIs = scanner.nextInt();
+                    System.out.println("Input your y co-ordinates");
+                    int yWhereCustomerIs = scanner.nextInt();
+                    testVehicleAppMethods(vehicleApp, xWhereCustomerIs, yWhereCustomerIs);
 
 
-                System.out.println("Which taxi ID to move?");
-                String taxiToBeMoved = scanner.next();
-
-                System.out.println("Which x co-ordinate to go to?");
-                int xToGo = scanner.nextInt();
-
-                System.out.println("Which y co-ordinate to go to?");
-                int yToGo = scanner.nextInt();
+                    vehicleApp.visualizeGrid(5);
 
 
-                // This is to move the taxi about
-                System.out.println(" ");
-                vehicleApp.testMoveVehicle(taxiToBeMoved, new Location(xToGo, yToGo));
-                vehicleApp.visualizeGrid(5);
+                    System.out.println("Which taxi ID to move?");
+                    String taxiToBeMoved = scanner.next();
 
-                System.out.println("Rate the taxi driver out of 5");
-                int userRatingofDriver = scanner.nextInt();
-                System.out.println("You rated the driver " + userRatingofDriver + " out of 5");
-                break;
-            } catch (InputMismatchException e) {
-                System.out.println("error - enter a valid input");
-                scanner.nextLine();
+                    System.out.println("Which x co-ordinate to go to?");
+                    int xToGo = scanner.nextInt();
+
+                    System.out.println("Which y co-ordinate to go to?");
+                    int yToGo = scanner.nextInt();
+
+
+                    // This is to move the taxi about
+                    System.out.println(" ");
+                    vehicleApp.testMoveVehicle(taxiToBeMoved, new Location(xToGo, yToGo));
+
+                    vehicleApp.visualizeGrid(5);
+
+                    System.out.println("Rate the taxi driver out of 5");
+                    int userRatingofDriver = scanner.nextInt();
+                    System.out.println("You rated the driver " + userRatingofDriver + " out of 5");
+
+
+                    break;
+                } catch (InputMismatchException e) {
+                    System.out.println("error - enter a valid input");
+                    scanner.nextLine();
+                }
             }
+            System.out.println("Would you like another taxi? - Type Y for Yes, or N for No");
+            String repeatLoop = scanner.next();
+            if(repeatLoop.equals("Y")){
+                System.out.println("repeetin");
+            }else{
+                break;
+            }
+
         }
 
     }
