@@ -60,3 +60,5 @@ V
 &src/main/java/org/example/Vehicle.java,e\3\e33d4fee6bac84eacf325992ccd718f041b88816
 W
 'src/main/java/org/example/Location.java,a\0\a057bfa3bd9a8b2da310d85a3015ce214961616a
+Q
+!.github/workflows/cd_workflow.yml,c\d\cdbcbc07f6935bc96dec33763295423a5db261da
