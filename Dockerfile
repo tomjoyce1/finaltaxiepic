@@ -5,7 +5,7 @@ FROM openjdk:11
 WORKDIR /
 
 # Copy the compiled JAR file from the target directory to the container
-COPY target/*.jar /app.jar
+COPY target/tom-taxi-app.jar /app.jar
 
 # Specify the command to run your application
 CMD ["java", "-jar", "app.jar"]
