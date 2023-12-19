@@ -21,7 +21,7 @@ public class Main {
                     testVehicleAppMethods(vehicleApp, xWhereCustomerIs, yWhereCustomerIs);
 
 
-                    vehicleApp.visualizeGrid(5);
+                    vehicleApp.visualizeGrid(5, xWhereCustomerIs, yWhereCustomerIs);
 
 
                     System.out.println("Which taxi ID to move?");
@@ -38,11 +38,14 @@ public class Main {
                     System.out.println(" ");
                     vehicleApp.testMoveVehicle(taxiToBeMoved, new Location(xToGo, yToGo));
 
-                    vehicleApp.visualizeGrid(5);
+
+
+                    vehicleApp.visualizeGrid(5, xToGo,yToGo);
 
                     System.out.println("Rate the taxi driver out of 5");
                     int userRatingofDriver = scanner.nextInt();
                     System.out.println("You rated the driver " + userRatingofDriver + " out of 5");
+                    System.out.println("Your average rating is now " + vehicleApp.getAverageRating(userRatingofDriver));
 
 
                     break;
@@ -56,6 +59,7 @@ public class Main {
             if(repeatLoop.equals("Y")){
                 System.out.println("repeetin");
             }else{
+                System.out.println("Thank you for using Fabcabs");
                 break;
             }
 
@@ -80,11 +84,22 @@ public class Main {
         //  Location locationABC123 = vehicleApp.testGetVehicleLoc("AB12");
         //   System.out.println("Location of ABC123: " + locationAB12);
 
+//if they are out of bounds
+              if(xWhereCustomerIs > 4 || yWhereCustomerIs > 4){
+                  Scanner sc = new Scanner(System.in);
+            System.out.println("Out of bounds, input coordinates within (4,4)");
+                  System.out.println("Input your x co-ordinates (must be less than 5)");
+                  xWhereCustomerIs = sc.nextInt();
+                  System.out.println("Input your y co-ordinates (must be less than 5)");
+                  yWhereCustomerIs = sc.nextInt();
+        }
+
 
         Location testLocation = new Location(xWhereCustomerIs, yWhereCustomerIs);
         int range = 1;
 
-        List<String> vehiclesInRange = vehicleApp.testGetVehiclesInRange(testLocation, range);
+        CustomArrayList<String> vehiclesInRange = vehicleApp.testGetVehiclesInRange(testLocation, range);
         System.out.println("Vehicles in range of " + testLocation + " with range " + range + ": " + vehiclesInRange);
+
     }
 }

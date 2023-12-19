@@ -1,9 +1,11 @@
-import org.example.VehicleApp;
+import org.example.CustomArrayList;
 import org.example.Location;
 import org.example.Vehicle;
+import org.example.VehicleApp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.example.CustomArrayList;
 
 public class TaxiTest {
 
@@ -25,7 +27,9 @@ public class TaxiTest {
     public void testMoveVehicle() {
         vehicleApp.testAddToMap("ABC123", new Location(1, 1));
         assertTrue(vehicleApp.testMoveVehicle("ABC123", new Location(2, 2)));
-        // Add assertions to verify the movement
+
+        assertNotEquals(new Location(1, 2), vehicleApp.testGetVehicleLoc("ABC123"));
+        assertEquals(new Location(2, 2), vehicleApp.testGetVehicleLoc("ABC123"));
     }
 
     @Test
@@ -51,7 +55,8 @@ public class TaxiTest {
         Location testLocation = new Location(1, 2);
         int range = 1;
 
-        assertEquals(1, vehicleApp.testGetVehiclesInRange(testLocation, range).size());
-        assertEquals("ABC123", vehicleApp.testGetVehiclesInRange(testLocation, range).get(0));
+        CustomArrayList<String> vehiclesInRange = vehicleApp.testGetVehiclesInRange(testLocation, range);
+        assertEquals(1, vehiclesInRange.size());
+        assertEquals("ABC123", vehiclesInRange.get(0));
     }
 }

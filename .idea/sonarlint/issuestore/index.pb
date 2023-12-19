@@ -65,3 +65,5 @@ Q
 :
 
 Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+^
+.src/main/java/org/example/CustomArrayList.java,a\b\ab2bc816caa8722208d9f3340111655bf697c993
