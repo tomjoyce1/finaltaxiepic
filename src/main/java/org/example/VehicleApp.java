@@ -16,6 +16,7 @@ public class VehicleApp implements VehicleHiringTest{
         vehicleMap = new HashMap<>();
     }
 
+    //test comment
 
 
     public boolean testAddToMap(String registrationNumber, Location loc){
