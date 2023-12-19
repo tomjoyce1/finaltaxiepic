@@ -26,10 +26,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile
+          file: Dockerfile
           push: true
           tags: |
             thomasjoyce1/tom-taxi-app:latest
             thomasjoyce1/tom-taxi-app:${{ github.sha }}
-      
+          build-args: --debug
 
