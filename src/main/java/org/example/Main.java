@@ -103,7 +103,7 @@ public class Main {
 
                     vehicleApp.visualizeGrid(5, xWhereCustomerIs, yWhereCustomerIs);
 
-
+//this is for moving taxis
                     String taxiToBeMoved;
                     while (true) {
                         System.out.println("Which taxi ID to move? e.g - (AB12, Tony, Mark)");
