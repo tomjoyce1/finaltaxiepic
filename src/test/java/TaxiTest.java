@@ -20,7 +20,7 @@ public class TaxiTest {
     public void testAddToMap() {
         assertTrue(vehicleApp.testAddToMap("ABC123", new Location(1, 1)));
         assertFalse(vehicleApp.testAddToMap("ABC123", new Location(2, 2)));
-        // Add more assertions if needed
+
     }
 
     @Test
@@ -35,9 +35,13 @@ public class TaxiTest {
     @Test
     public void testRemoveVehicle() {
         vehicleApp.testAddToMap("ABC123", new Location(1, 1));
+
         assertTrue(vehicleApp.testRemoveVehicle("ABC123"));
+        //bogus vehicle remove
         assertFalse(vehicleApp.testRemoveVehicle("Nonexistent"));
-        // Add assertions to verify removal
+
+        //this is my test to make sure that the vehicle was properly removed from map
+        assertFalse(vehicleApp.vehicleExists("ABC123"));
     }
 
     @Test

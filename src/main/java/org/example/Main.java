@@ -19,20 +19,34 @@ public class Main {
                     int xWhereCustomerIs = scanner.nextInt();
                     System.out.println("Input your y co-ordinates");
                     int yWhereCustomerIs = scanner.nextInt();
-                    testVehicleAppMethods(vehicleApp, xWhereCustomerIs, yWhereCustomerIs);
+                    int[] coordinates = outOfBounds(xWhereCustomerIs,yWhereCustomerIs);
+
+                    testVehicleAppMethods(vehicleApp, coordinates[0], coordinates[1]);
 
 
                     vehicleApp.visualizeGrid(5, xWhereCustomerIs, yWhereCustomerIs);
 
 
-                    System.out.println("Which taxi ID to move?");
-                    String taxiToBeMoved = scanner.next();
+                    String taxiToBeMoved;
+                    while (true) {
+                        System.out.println("Which taxi ID to move? (AB12, Tony, Mark)");
+                        taxiToBeMoved = scanner.next();
+
+                        if (vehicleApp.vehicleExists(taxiToBeMoved)) {
+                            break;
+                        } else {
+                            System.out.println("Invalid taxi ID. Please enter a valid taxi ID.");
+                        }
+                    }
+
+
 
                     System.out.println("Which x co-ordinate to go to?");
                     int xToGo = scanner.nextInt();
 
                     System.out.println("Which y co-ordinate to go to?");
                     int yToGo = scanner.nextInt();
+
 
 
                     // This is to move the taxi about
@@ -52,8 +66,12 @@ public class Main {
 
                     System.out.println("Rate the taxi driver out of 5");
                     int userRatingofDriver = scanner.nextInt();
-                    System.out.println("You rated the driver " + userRatingofDriver + " out of 5");
 
+                    if(userRatingofDriver > 5){
+                        System.out.println("Your rating has been discarded");
+                    } else {
+                        System.out.println("You rated the driver " + userRatingofDriver + " out of 5");
+                    }
 
 
                     break;
@@ -65,7 +83,7 @@ public class Main {
             System.out.println("Would you like another taxi? - Type Y for Yes, or N for No");
             String repeatLoop = scanner.next();
             if(repeatLoop.equals("Y")){
-                System.out.println("repeetin");
+                System.out.println("Repeating now");
             }else{
                 System.out.println("Thank you for using Fabcabs");
                 break;
@@ -93,14 +111,7 @@ public class Main {
         //   System.out.println("Location of ABC123: " + locationAB12);
 
 //if they are out of bounds
-              if(xWhereCustomerIs > 5 || yWhereCustomerIs > 5){
-                  Scanner sc = new Scanner(System.in);
-            System.out.println("Out of bounds, input coordinates within (4,4)");
-                  System.out.println("Input your x co-ordinates (must be less than 5)");
-                  xWhereCustomerIs = sc.nextInt();
-                  System.out.println("Input your y co-ordinates (must be less than 5)");
-                  yWhereCustomerIs = sc.nextInt();
-        }
+
 
 
         Location testLocation = new Location(xWhereCustomerIs, yWhereCustomerIs);
@@ -108,6 +119,24 @@ public class Main {
 
         CustomArrayList<String> vehiclesInRange = vehicleApp.testGetVehiclesInRange(testLocation, range);
         System.out.println("Vehicles in range of " + testLocation + " with range " + range + ": " + vehiclesInRange);
+
+    }
+
+    private static int[] outOfBounds(int x, int y) {
+
+        while(x > 5 || y > 5 || x < 0 || y < 0){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Out of bounds, input coordinates within (4,4)");
+            System.out.println("Input your x co-ordinates (must be less than 5)");
+            x = sc.nextInt();
+            System.out.println("Input your y co-ordinates (must be less than 5)");
+            y = sc.nextInt();
+
+
+
+
+        }
+        return new int[]{x, y};
 
     }
 }

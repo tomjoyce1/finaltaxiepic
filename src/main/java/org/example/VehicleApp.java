@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class VehicleApp implements VehicleHiringTest {
 
+    int arbitraryConstantToCalculateFarePrice = 2;
+
     private Map<String, Vehicle> vehicles;
     private Map<Location, CustomArrayList<Vehicle>> vehicleMap;
 
@@ -58,6 +60,17 @@ public class VehicleApp implements VehicleHiringTest {
         return totalSum/count;
 
     }
+
+
+
+    public boolean vehicleExists(String taxiInputtedByUser) {
+        return vehicles.containsKey(taxiInputtedByUser);
+    }
+
+
+
+
+
     @Override
     public boolean testRemoveVehicle(String registrationNumber) {
         Vehicle vehicle = vehicles.remove(registrationNumber);
@@ -100,12 +113,12 @@ public class VehicleApp implements VehicleHiringTest {
     }
 
     public String calculateFare(int x1, int y1, int x2, int y2) {
-        // Calculate Euclidean distance
+        // Here is my distance calculation
         double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 
-        // Your fare calculation logic here
-        // For example, a simple flat rate of €1 per unit distance
-        double fare = distance * 2.0;
+
+
+        double fare = distance * arbitraryConstantToCalculateFarePrice;
 
         String dubToString = Double.toString(fare);
         String subString = dubToString.substring(0,5);
