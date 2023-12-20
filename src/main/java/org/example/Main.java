@@ -53,7 +53,7 @@ public class Main {
                     System.out.println(" ");
                     vehicleApp.testMoveVehicle(taxiToBeMoved, new Location(xToGo, yToGo));
 
-//this is to print out grid
+//this is to print out grid.
 
                     vehicleApp.visualizeGrid(5, xToGo,yToGo);
                     String fare = vehicleApp.calculateFare(xWhereCustomerIs, yWhereCustomerIs, xToGo, yToGo);
