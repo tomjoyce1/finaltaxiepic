@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.text.DecimalFormat;
 
 public class VehicleApp implements VehicleHiringTest {
 
@@ -112,23 +113,29 @@ public class VehicleApp implements VehicleHiringTest {
         return vehiclesInRange;
     }
 
-    public String calculateFare(int x1, int y1, int x2, int y2) {
-        // Here is my distance calculation
-        double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+@Override
+    public double calculateFare(int x1, int y1, int x2, int y2, Location startingDriverLocation) {
+
+        int startingDriverX = startingDriverLocation.getX();
+    int startingDriverY = startingDriverLocation.getY();
 
 
-
-        double fare = distance * arbitraryConstantToCalculateFarePrice;
-
-        String dubToString = Double.toString(fare);
-        String subString = dubToString.substring(0,5);
+    double distancefromTaxiToCustomer = Math.sqrt(Math.pow(startingDriverX - x1, 2) + Math.pow(startingDriverY - y1, 2));
+    double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        double fare = (distancefromTaxiToCustomer + distance) * arbitraryConstantToCalculateFarePrice;
 
 
+    DecimalFormat df = new DecimalFormat("#.##");
+    String formattedNumber = df.format(fare);
+    try {
+        return Double.parseDouble(formattedNumber);
+    } catch (NumberFormatException e) {
 
-               return subString;
-
+        System.err.println("Error parsing fare amount: " + e.getMessage());
+        return 0.0;
     }
-
+    }
 
     private void printCellWithVehicle(Vehicle vehicle) {
         System.out.print("[" + vehicle.getRegistrationNumber() + "]");

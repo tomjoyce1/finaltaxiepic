@@ -51,6 +51,19 @@ public class TaxiTest {
         assertNull(vehicleApp.testGetVehicleLoc("Nonexistent"));
     }
 
+//new test
+    @Test
+    public void testCalculatefare() {
+        int x1 = 0, y1 = 0, x2 = 4, y2 = 4;
+        Location driverStartingLocation = new Location(1,1);
+
+        double expectedFare = 14.14;
+        double actualFare = vehicleApp.calculateFare(x1, y1, x2, y2,driverStartingLocation);
+        assertEquals(expectedFare, actualFare, 0.0001);
+
+    }
+
+
     @Test
     public void testGetVehiclesInRange() {
         vehicleApp.testAddToMap("ABC123", new Location(1, 1));
